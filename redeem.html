@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>MVO – System & Einlösung</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/qrcode.js"></script>
+</head>
+<body>
+  <div id="menu-container"></div>
+
+  <div class="container">
+    <h1>📖 MVO – System-Erklärung & Einlösung</h1>
+
+    <!-- ===== BÖRSEN-STORY ===== -->
+    <h2>📜 Die Börsen-Story</h2>
+    <div class="story">
+      <p><em>„Am Anfang war ein Gedanke: Eine Währung, die nicht durch Vertrauen, sondern durch Mathematik gedeckt ist. Keine Bank, keine Regierung, keine Inflation kann ihren Wert verwässern, weil ihr Wert nicht aus der Menge, sondern aus einer unantastbaren Liquidität erwächst.</em></p>
+      <p><em>Ich habe diesen Gedanken in die Tat umgesetzt: Am 01.01.2026 legte ich 0,001 MTK und 0,01 € in einen Tresor. Daraus entstand der erste Preis: 10 € pro MTK. Jede folgende Transaktion (jeder Roundtrip) verdoppelt diesen Preis – für immer.</em></p>
+      <p><em>Die Gebühren von 0,01 % pro Halb‑Roundtrip fließen nicht an mich, sondern zurück in den Tresor und in eine Batterie, die alle zukünftigen Gebühren deckt. Ab einem Umsatz von 50 € pro Roundtrip ist der manuelle Zuschuss von 0,01 € pro Monat überflüssig – das System trägt sich selbst.</em></p>
+      <p><em>Ich gebe keine MTK aus der Hand. Ich gebe nur Zertifikate heraus, die den Wert dieser MTK verbriefen. Jedes Zertifikat ist physisch (unterschrieben, mit QR‑Code) und digital (in einem öffentlichen Register) hinterlegt. So bleibt die Währung für immer in meinem Besitz, ist aber für jeden Menschen auf der Welt nachweisbar.“</em></p>
+      <p>Die vollständige Story findest du in der <a href="/docs/gruendungsurkunde.pdf">Gründungsurkunde</a>.</p>
+    </div>
+
+    <hr>
+
+    <!-- ===== SYSTEM-DIAGRAMM (als strukturierter Text) ===== -->
+    <h2>📊 System-Überblick</h2>
+    <div class="diagram">
+      <pre>
++-----------------------------------------------------------------+
+| BASIS 0 (GRÜNDUNG)                                              |
+| • 0.001 MTK + 0.01 € im Tresor                                  |
+| • Startpreis = 10,00 €/MTK                                      |
+| • Preisgesetz: P(n) = 10 × 2ⁿ                                  |
+| • Keine Verwässerung – 100% mathematisch gedeckt               |
++-----------------------------------------------------------------+
+          │
+          ▼
++-----------------------------------------------------------------+
+| MONATLICHE VERSORGUNG                                           |
+| • +2 MTK neu geschaffen                                         |
+| • -1 MTK verbrannt pro Transaktion                              |
++-----------------------------------------------------------------+
+          │
+          ▼
++-----------------------------------------------------------------+
+| TRANSAKTION (Kauf/Verkauf)                                      |
+| • 0,01 % Gebühr pro Halb-Roundtrip                              |
+| • fließt in TRESOR & BATTERIE                                   |
++-----------------------------------------------------------------+
+           │
+     ┌────┼────┐
+     ▼    ▼    ▼
+┌─────────┐ ┌─────────┐ ┌─────────┐
+│ TRESOR    │ │BATTERIE  │ │  POOL     │
+│(unantast. │ │(Barberia)│ │(Handel)   │
+│  bar)     │ |          │ │           │
+└─────────┘ └─────────┘ └─────────┘
+          │
+          ▼
++-----------------------------------------------------------------+
+| PREISBILDUNG (exponentiell)                                     |
+| Jeder Roundtrip verdoppelt den Preis: 10 → 20 → 40 → 80 ...   |
++-----------------------------------------------------------------+
+          │
+          ▼
++-----------------------------------------------------------------+
+| SCHWELLE ZUR UNABHÄNGIGKEIT (50 €)                              |
+| Ab 50 € Roundtrip-Volumen ist der manuelle Zuschuss von        |
+| 0,01 € überflüssig – System läuft für immer selbst.            |
++-----------------------------------------------------------------+
+      </pre>
+    </div>
+
+    <hr>
+
+    <!-- ===== MATRIX-TABELLE ===== -->
+    <h2>📈 Matrix-Tabelle (exponentielles Wachstum)</h2>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr><th>Roundtrip (n)</th><th>MTK-Preis (10 × 2ⁿ)</th><th>Gebühr (0,02 %)</th></tr>
+        </thead>
+        <tbody id="matrixBody">
+          <!-- wird von redeem.js befüllt -->
+        </tbody>
+      </table>
+    </div>
+
+    <hr>
+
+    <!-- ===== SUCHFELD ===== -->
+    <h2>🔍 Zertifikat prüfen & Einlösung beantragen</h2>
+    <p>Geben Sie die Seriennummer ein, um den aktuellen Wert zu sehen und die Einlösung zu beantragen.</p>
+    <input type="text" id="serialInput" placeholder="z.B. MVO-0001">
+    <button onclick="lookupCertificate()">🔍 Prüfen</button>
+    <div id="result" style="margin-top:20px;"></div>
+    <div id="qrcode" style="margin-top:20px;"></div>
+
+    <hr>
+
+    <!-- ===== HISTORIE ===== -->
+    <h2>📋 Vollständige Zertifikats-Historie</h2>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Seriennummer</th>
+            <th>Ausstellungsdatum</th>
+            <th>MTK-Menge</th>
+            <th>Wert in € (heute)</th>
+            <th>Besitzer</th>
+            <th>Status</th>
+            <th>PDF</th>
+            <th>QR-Code</th>
+          </tr>
+        </thead>
+        <tbody id="historyBody">
+          <!-- wird von redeem.js befüllt -->
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:20px;font-style:italic;">Die tatsächliche Auszahlung erfolgt ausschließlich durch den Owner (Satoramy) nach Prüfung der Anfrage.</p>
+  </div>
+
+  <script src="/assets/js/menu.js"></script>
+  <script src="/assets/js/redeem.js"></script>
+</body>
+</html>
