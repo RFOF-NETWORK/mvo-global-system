@@ -1,0 +1,21 @@
+{
+  "systemName": "MVO – Mathematical Value Office",
+  "operator": "RFOF-NETWORK",
+  "owner": "Satoramy",
+  "githubUsername": "RFOF-NETWORK",
+  "repositoryName": "mvo-global-system",
+  "baseUrl": "https://RFOF-NETWORK.github.io/mvo-global-system/",
+  "foundingDate": "2026-01-01",
+  "baseMTK": 0.001,
+  "baseEUR": 0.01,
+  "startPrice": 10,
+  "priceFormula": "P(n) = 10 * 2^n",
+  "monthlyCreation": 2,
+  "monthlyBurn": 1,
+  "feeHalfRoundtrip": 0.0001,
+  "feeFullRoundtrip": 0.0002,
+  "manualTopUp": 0.01,
+  "thresholdVolume": 50,
+  "currentRoundtrips": 0,
+  "contactEmail": "info@rfof-bitcoin.org"
+}
