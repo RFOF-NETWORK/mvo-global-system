@@ -1,0 +1,13 @@
+{
+  "certificates": [
+    {
+      "serial": "MVO-0001",
+      "issueDate": "2026-01-01",
+      "mtkAmount": 0.001,
+      "owner": "Satoramy (Gründer)",
+      "status": "Aktiv",
+      "pdfLink": "/certificates/MVO-0001.pdf",
+      "qrCodeLink": "/assets/qr-codes/MVO-0001.png"
+    }
+  ]
+}
