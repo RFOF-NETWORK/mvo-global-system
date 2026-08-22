@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>MVO – Zertifikatsregister</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <!-- Hamburger-Menü wird von menu.js eingefügt -->
+  <div id="menu-container"></div>
+
+  <div class="container">
+    <h1>📜 MVO – Mathematical Value Office</h1>
+    <p><strong>Betreiber:</strong> <span id="operator"></span></p>
+    <p><strong>Owner:</strong> <span id="owner"></span></p>
+    <p><strong>Gründungsdatum:</strong> <span id="foundingDate"></span></p>
+    <p><strong>Aktuelle Roundtrips:</strong> <span id="currentRoundtrips"></span></p>
+    <p><strong>Aktueller MTK-Preis:</strong> <span id="currentPrice"></span> €</p>
+    <hr>
+    <h2>📋 Ausgestellte Zertifikate</h2>
+    <div style="overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Seriennummer</th>
+            <th>Ausstellungsdatum</th>
+            <th>MTK-Menge</th>
+            <th>Wert in € (heute)</th>
+            <th>Besitzer</th>
+            <th>Status</th>
+            <th>PDF</th>
+            <th>QR-Code</th>
+          </tr>
+        </thead>
+        <tbody id="certBody">
+          <!-- wird von main.js befüllt -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="/assets/js/menu.js"></script>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
