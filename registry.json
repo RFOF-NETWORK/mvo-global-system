@@ -9,5 +9,15 @@
       "pdfLink": "/certificates/MVO-0001.pdf",
       "qrCodeLink": "/assets/qr-codes/MVO-0001.png"
     }
+,
+    {
+      "serial": "MVO-0002",
+      "issueDate": "2026-08-23",
+      "mtkAmount": 0.002,
+      "owner": "Name des Kunden",
+      "status": "Aktiv",
+      "pdfLink": "/certificates/MVO-0002.pdf",
+      "qrCodeLink": "/assets/qr-codes/MVO-0002.png"
+    }
   ]
 }
