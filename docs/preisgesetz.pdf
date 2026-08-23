@@ -1,0 +1,22 @@
+
+==================================================
+              PREISGESETZ DES MVO
+
+Das unwiderrufliche Preisgesetz lautet:
+
+    P(n) = 10 × 2^n
+
+Dabei ist n die Anzahl der vollständigen Roundtrips seit der Gründung am 2026-01-01.
+
+Beispiele:
+- n=0  → 10,00 €/MTK
+- n=1  → 20,00 €/MTK
+- n=2  → 40,00 €/MTK
+- n=3  → 80,00 €/MTK
+- …
+- n=10 → 10.240,00 €/MTK
+
+Der Preis verdoppelt sich mit jedem Roundtrip, weil jede Transaktion den Tresor mit Gebühren füllt und MTK verbrannt werden.
+
+Dieses Gesetz ist mathematisch fundiert und unwiderruflich.
+==================================================
