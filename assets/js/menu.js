@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <nav class="nav-links" id="navLinks">
       <a href="/index.html" id="navIndex">📋 Zertifikate</a>
       <a href="/redeem.html" id="navRedeem">📖 System & Einlösung</a>
+      <a href="/zertifikat.html" id="navZertifikat">📄 Zertifikat erstellen</a>
       <a href="/docs/gruendungsurkunde.html" id="navGruendung">📜 Gründungsurkunde</a>
       <a href="/docs/preisgesetz.html" id="navPreis">📊 Preisgesetz</a>
       <a href="/docs/wp-pruefbericht.html" id="navWp">🧾 WP-Bericht</a>
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const links = {
     '/index.html': 'navIndex',
     '/redeem.html': 'navRedeem',
+    '/zertifikat.html': 'navZertifikat',
     '/docs/gruendungsurkunde.html': 'navGruendung',
     '/docs/preisgesetz.html': 'navPreis',
     '/docs/wp-pruefbericht.html': 'navWp'
