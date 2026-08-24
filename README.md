@@ -22,13 +22,68 @@ Das MVO ist ein privates, mathematisch gedecktes Wertesystem, das auf einer unve
 3. Einlösung beantragen → E-Mail an den Owner (info@rfof-bitcoin.org).
 4. Owner prüft, überweist den Euro-Betrag und ändert den Status auf „Eingelöst“.
 
+---
+
 ## 📂 Verzeichnisstruktur
-Siehe README im Repository oder die Ordnerübersicht.
+
+```text
+mvo-global-system/
+├── .nojekyll                     # GitHub Pages – keine Jekyll-Verarbeitung
+├── .gitignore                    # Ausgeschlossene lokale Dateien
+├── index.html                    # Startseite (Zertifikatsregister)
+├── redeem.html                   # System-Erklärung & Einlösung
+├── zertifikat.html               # Öffentliche Zertifikatsvorlage (nur für Betreiber)
+├── mvo-0001.html                 # Eigenständige HTML-Ansicht für Zertifikat 1
+├── mvo-0002.html                 # Eigenständige HTML-Ansicht für Zertifikat 2
+├── config.json                   # Systemparameter (unveränderlich)
+├── registry.json                 # Öffentliches Zertifikatsregister (mit htmlLink)
+├── README.md                     # Diese Datei
+├── LICENSE.md                    # Proprietäre Lizenz
+├── /certificates/                # Ordner für Zertifikats-PDFs
+│   ├── MVO-0001.pdf
+│   └── MVO-0002.pdf
+├── /assets/                      # Alle statischen Ressourcen
+│   ├── /css/
+│   │   └── style.css             # Design für alle Seiten
+│   ├── /js/
+│   │   ├── menu.js               # Hamburger-Menü (6 Links)
+│   │   ├── main.js               # Startseiten-Logik (Tabelle mit htmlLink)
+│   │   ├── redeem.js             # Such- & Einlöse-Logik für redeem.html
+│   │   └── qrcode.js             # Eigene lokale QR-Code-Bibliothek (keine CDN)
+│   └── /qr-codes/                # Generierte QR-Code-Bilder (PNG)
+│       ├── MVO-0001.png
+│       └── MVO-0002.png
+└── /docs/                        # Juristische & technische Dokumentation
+    ├── gruendungsurkunde.html    # Gründungsurkunde (Web)
+    ├── gruendungsurkunde.pdf     # Gründungsurkunde (PDF)
+    ├── preisgesetz.html          # Preisgesetz (Web)
+    ├── preisgesetz.pdf           # Preisgesetz (PDF)
+    ├── wp-pruefbericht.html      # Wirtschaftsprüfer-Bericht (Web)
+    └── wp-pruefbericht.pdf       # Wirtschaftsprüfer-Bericht (PDF) – Platzhalter
+```
+
+---
+
+## 🌐 Öffentliche Seiten (alle über das Menü erreichbar)
+
+Seite URL
+Zertifikatsregister /index.html
+System & Einlösung /redeem.html
+Zertifikatsvorlage /zertifikat.html
+Gründungsurkunde /docs/gruendungsurkunde.html
+Preisgesetz /docs/preisgesetz.html
+WP‑Bericht /docs/wp-pruefbericht.html
+
+Jedes Zertifikat hat zusätzlich eine eigene HTML‑Seite (z.B. /mvo-0001.html), die über die Tabelle auf der Startseite verlinkt ist.
+
+---
 
 ## 🧑‍⚖️ Rechtlicher Hinweis
+
 Dieses System ist kein Finanzprodukt im Sinne des KWG. Es handelt sich um eine private, vertragliche Wertvereinbarung zwischen dem MVO und den Zertifikatsinhabern.
 
 ---
-**Betreiber:** RFOF-NETWORK  
-**Owner:** Satoramy  
-**Repository:** https://github.com/RFOF-NETWORK/mvo-global-system
+
+***Betreiber: RFOF-NETWORK***
+***Owner: Satoramy***
+***Repository: https://github.com/RFOF-NETWORK/mvo-global-system***
