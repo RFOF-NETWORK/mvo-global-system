@@ -7,17 +7,18 @@
       "owner": "Satoramy (Gründer)",
       "status": "Aktiv",
       "pdfLink": "/certificates/MVO-0001.pdf",
-      "qrCodeLink": "/assets/qr-codes/MVO-0001.png"
-    }
-,
+      "qrCodeLink": "/assets/qr-codes/MVO-0001.png",
+      "htmlLink": "/mvo-0001.html"
+    },
     {
       "serial": "MVO-0002",
       "issueDate": "2026-08-23",
       "mtkAmount": 0.002,
-      "owner": "Name des Kunden",
+      "owner": "Satoria",
       "status": "Aktiv",
       "pdfLink": "/certificates/MVO-0002.pdf",
-      "qrCodeLink": "/assets/qr-codes/MVO-0002.png"
+      "qrCodeLink": "/assets/qr-codes/MVO-0002.png",
+      "htmlLink": "/mvo-0002.html"
     }
   ]
 }
