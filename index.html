@@ -10,7 +10,21 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <div id="menu-container"></div>
+  <!-- STATISCHES MENÜ (wird von menu.js dynamisch ersetzt) -->
+  <div id="menu-container">
+    <div class="menu-logo">☯ MVO</div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="navLinks">
+      <a href="/index.html" id="navIndex">📋 Zertifikate</a>
+      <a href="/redeem.html" id="navRedeem">📖 System & Einlösung</a>
+      <a href="/zertifikat.html" id="navZertifikat">📄 Zertifikat erstellen</a>
+      <a href="/docs/gruendungsurkunde.html" id="navGruendung">📜 Gründungsurkunde</a>
+      <a href="/docs/preisgesetz.html" id="navPreis">📊 Preisgesetz</a>
+      <a href="/docs/wp-pruefbericht.html" id="navWp">🧾 WP-Bericht</a>
+    </nav>
+  </div>
 
   <div class="container">
     <h1>📜 MVO – Mathematical Value Office</h1>
