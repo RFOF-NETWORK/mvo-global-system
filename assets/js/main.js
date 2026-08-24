@@ -34,6 +34,7 @@ Promise.all([loadConfig(), loadRegistry()])
         <td>${cert.owner}</td>
         <td>${cert.status}</td>
         <td><a href="${cert.pdfLink}" target="_blank">📄 PDF</a></td>
+        <td><a href="${cert.htmlLink}" target="_blank">🌐 HTML</a></td>
         <td><img src="${cert.qrCodeLink}" alt="QR" width="50" onerror="this.style.display='none'"></td>
       `;
       tbody.appendChild(row);
