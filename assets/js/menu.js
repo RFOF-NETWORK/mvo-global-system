@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // Aktive Seite markieren
   const current = window.location.pathname;
   const links = {
     '/index.html': 'navIndex',
